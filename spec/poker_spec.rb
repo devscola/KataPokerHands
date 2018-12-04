@@ -46,7 +46,12 @@ end
 describe "a Hand" do
   describe "when ranked" do
     it "can be ranked by high card" do
-      expect(Hand.new('C2C3C4C5C6').rank.highcard).to eq 'C6'
+      expect(Hand.new('C4C5C6C2C3').rank.highcard).to eq 'C6'
+    end
+
+    it "can be ranked by pair" do
+
+      expect(Hand.new('C3C4C6H6H7').rank.pair).to eq('6')
     end
   end
 end
